@@ -1,0 +1,27 @@
+{
+  "name": "covid-19-map-app",
+  "version": "1.0.0",
+  "description": "explore covid-19 around the world",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel src/index.html",
+    "prod": "parcel build src/index.html"
+  },
+  "keywords": [
+    "covid-19",
+    "google-maps",
+    "deck.gl"
+  ],
+  "author": "elmehdi rhindi",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "@deck.gl/aggregation-layers": "^8.2.10",
+    "@deck.gl/core": "^8.2.10",
+    "@deck.gl/google-maps": "^8.2.10",
+    "@deck.gl/layers": "^8.2.10"
+  }
+}
