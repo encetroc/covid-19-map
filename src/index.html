@@ -1,28 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <title>Covid-19 map</title>
-</head>
-<body>
-    <div id="tooltip"></div>
-    <div class="map" id="map"></div>
-    <div class="hud" id="hud">
-        <button class="btn" id="btnCountries">Countries</button>
-        <button class="btn" id="btnProvinces">Provinces</button>
-        <button class="btn" id="btnCitiesScatter">Cities</button>
-        <button class="btn" id="btnCitiesHeatmap">Cities</button>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>deck.gl w/ Google Maps example</title>
+  </head>
+
+  <body>
+    <div id="tooltip">
+      <h3 id="location">Paris</h3>
+      <h4 id="updated">Last update 02/10/2020 10:33</h4>
+      <ul>
+        <li>Confirmed: <span id="confirmed">13200</span></li>
+        <li>Recovered: <span id="recovered">1200</span></li>
+        <li>Dead: <span id="dead">110</span></li>
+      </ul>
     </div>
-    <div class="loading" id="loading">
-        <div class="lds-ellipsis">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+    <div id="menu"></div>
+    <div id="map"></div>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
