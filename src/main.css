@@ -40,7 +40,6 @@ body {
   position: fixed;
   z-index: 2;
   top: 80px;
-  width: 250px;
   overflow-y: scroll;
 }
 
@@ -61,8 +60,8 @@ body {
 
 #menu button {
   display: block;
-  height: 125px;
-  width: 200px;
+  height: 100px;
+  width: 150px;
   padding: 0px;
   margin: 20px 10px;
   border: none;
@@ -73,6 +72,9 @@ body {
 }
 
 #menu .label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #eeeeee;
   font-size: 20px;
   font-weight: 200;
@@ -88,8 +90,8 @@ body {
 }
 
 #menu button:hover {
-  height: 225px;
-  width: 350px;
+  height: 125px;
+  width: 200px;
 }
 
 #menu button:focus,
@@ -102,10 +104,10 @@ body {
 #menu .selected > .label,
 #menu .selected:hover,
 #menu .selected:hover > .label {
-  height: 150px;
-  width: 225px;
+  height: 125px;
+  width: 200px;
   font-weight: 400;
-  line-height: 150px;
+  /* line-height: 150px; */
 }
 
 #menu button:focus > .label,
@@ -114,7 +116,7 @@ body {
 }
 
 #menu button:hover > .label {
-  line-height: 225px;
+  /* line-height: 225px; */
 }
 
 #menu button,
