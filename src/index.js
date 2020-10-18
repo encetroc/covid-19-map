@@ -14,7 +14,7 @@ class App {
 		const map_options = defaultLayers.getMapOptions()
 		await this.GoogleMapDeckGL.initMapWithOverlay(map_options)
 		this.buildMenu(defaultId)
-		this.changeExample(defaultLayers)
+		this.changeLayers(defaultLayers)
 	}
 
 	buildMenu(defaultLayersId) {
@@ -25,19 +25,19 @@ class App {
 		this.GoogleMapDeckGL.map.addListener('dragend', () => {
 			menu.classList.remove('fade')
 		})
-		covidLayers.forEach((example, index) => {
-			const exampleMetadata = example.getMetadata()
+		covidLayers.forEach((myLayers, index) => {
+			const layersMetadata = myLayers.getMetadata()
 			const button = document.createElement('button')
 			const label = document.createElement('div')
 			label.classList.add('label')
-			label.innerText = exampleMetadata.name
-			button.style.backgroundImage = `url(${exampleMetadata.thumbnail})`
+			label.innerText = layersMetadata.name
+			button.style.backgroundImage = `url(${layersMetadata.thumbnail})`
 			button.onclick = (() => {
 				this.selectedButton.classList.remove('selected')
 				this.selectedButton = button
 				this.selectedButton.classList.add('selected')
-				this.changeExample(example)
-			}).bind(this, example)
+				this.changeLayers(myLayers)
+			}).bind(this, myLayers)
 			button.appendChild(label)
 			menu.appendChild(button)
 			if (index === defaultLayersId) {
@@ -47,13 +47,11 @@ class App {
 		})
 	}
 
-	async changeExample(newLayers) {
+	async changeLayers(newLayers) {
 		const layers = await newLayers.getLayers()
 		const mapOptions = newLayers.getMapOptions()
-		setTimeout(() => {
-			this.GoogleMapDeckGL.setLayer(layers)
-			this.GoogleMapDeckGL.setMap(mapOptions)
-		}, 100)
+		this.GoogleMapDeckGL.setLayer(layers)
+		this.GoogleMapDeckGL.setMap(mapOptions)
 	}
 }
 
