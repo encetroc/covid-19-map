@@ -13,8 +13,21 @@ body {
   overflow: hidden;
 }
 
+#attribution {
+  z-index: 4;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 10px;
+  padding: 10px;
+  background: #fff;
+  opacity: 0.8;
+  border-radius: 5px;
+}
+
 #tooltip {
-  z-index: 3;
+  z-index: 0;
   display: block;
   position: absolute;
   background: #fff;
@@ -22,8 +35,6 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   opacity: 0;
-/*   left: 500px;
-  top: 500px; */
 }
 
 #map {
@@ -39,7 +50,7 @@ body {
 #menu {
   position: fixed;
   z-index: 2;
-  top: 80px;
+  top: 0;
   overflow-y: scroll;
 }
 
@@ -63,7 +74,7 @@ body {
   height: 100px;
   width: 150px;
   padding: 0px;
-  margin: 20px 10px;
+  margin: 10px;
   border: none;
   border-radius: 3px;
   box-shadow: 0px 0px 3px 0px #c3c3c3;
@@ -107,16 +118,11 @@ body {
   height: 125px;
   width: 200px;
   font-weight: 400;
-  /* line-height: 150px; */
 }
 
 #menu button:focus > .label,
 #menu .selected > .label {
   background-color: rgba(0, 0, 0, 0.4);
-}
-
-#menu button:hover > .label {
-  /* line-height: 225px; */
 }
 
 #menu button,
