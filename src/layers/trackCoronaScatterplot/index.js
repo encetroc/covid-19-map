@@ -11,15 +11,15 @@ export class TrackCoronaScatterplotLayer {
         this.getData()
     }
 
-    async getData() {
-        this.data = await fetch(this.url).then(res => res.json()).then(data => data.data)
+    getData() {
+        this.data = fetch(this.url).then(res => res.json()).then(data => data.data)
     }
 
     async getLayers() {
         const layers = [
             new ScatterplotLayer({
                 id: this.id,
-                data: this.data,
+                data: await this.data,
                 opacity: 0.8,
                 filled: true,
                 radiusMinPixels: 10,
