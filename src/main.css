@@ -13,6 +13,19 @@ body {
   overflow: hidden;
 }
 
+#attribution {
+  z-index: 4;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 10px;
+  padding: 10px;
+  background: #fff;
+  opacity: 0.8;
+  border-radius: 5px;
+}
+
 #tooltip {
   z-index: 0;
   display: block;
@@ -21,7 +34,7 @@ body {
   border-radius: 5px;
   padding-left: 20px;
   padding-right: 20px;
-  opacity: 0.8;
+  opacity: 0;
 }
 
 #map {

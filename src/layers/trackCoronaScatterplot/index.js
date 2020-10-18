@@ -43,6 +43,7 @@ export class TrackCoronaScatterplotLayer {
                         confirmedEl.textContent = confirmed
                         recoveredEl.textContent = recovered
                         deadEl.textContent = dead
+                        tooltipEl.style.opacity = 0.8
                         tooltipEl.style.zIndex = 3
                         tooltipEl.style.left = x + 10 + 'px'
                         tooltipEl.style.top = y + 10 + 'px'
