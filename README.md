@@ -24,6 +24,11 @@ Get inside the project's folder:
 ```bash
 cd covid-19-map
 ```
+Create a new file called `.env` in the root of your project, just next to `package.json` and write the following inside of it:  
+Don't forget to change `<google_map_api_key>` with your own google map API key
+```
+GoogleMapsAPIKey = <google_map_api_key>
+```
 Install dependencies:
 ```bash
 npm install
