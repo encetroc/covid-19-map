@@ -1,4 +1,4 @@
-import {ScatterplotLayer} from '@deck.gl/layers';
+import {ScatterplotLayer} from '@deck.gl/layers'
 
 export class ProvincesScatterplotLayer {
   constructor() {}
@@ -32,17 +32,17 @@ export class ProvincesScatterplotLayer {
                 confirmedEl.textContent = confirmed
                 recoveredEl.textContent = recovered
                 deadEl.textContent = dead
-                tooltipEl.style.opacity = 0.8
+                tooltipEl.style.zIndex = 3
                 tooltipEl.style.left = x + 10 + 'px'
                 tooltipEl.style.top = y + 10 + 'px'
             } else {
-              tooltipEl.style.opacity = 0.0
+              tooltipEl.style.zIndex = 0
             }
         }
       })
-    ];
+    ]
 
-    return layers;
+    return layers
   }
   static getMapOptions() {
     return {
