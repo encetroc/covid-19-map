@@ -1,18 +1,23 @@
 import {ScatterplotLayer} from '@deck.gl/layers'
 
-export class CitiesScatterplotLayer {
-  constructor() {}
-  static async *getLayers() {    
-    const data = await fetch('https://www.trackcorona.live/api/cities').then(res => res.json()).then(data => data.data)
+export class TrackCoronaScatterplotLayer {
+  constructor(url, metaData, id, mapOptions) {
+      this.url = url
+      this.metaData = metaData
+      this.id = id
+      this.mapOptions = mapOptions
+  }
+  async *getLayers() {    
+    const data = await fetch(this.url).then(res => res.json()).then(data => data.data)
 
     const layers = [
       new ScatterplotLayer({
-        id: 'covid-cities-scatterplot',
+        id: this.id,
         data: data,
         opacity: 0.8,
         filled: true,
-        radiusMinPixels: 2,
-        radiusMaxPixels: 100,
+        radiusMinPixels: 10,
+        radiusMaxPixels: 40,
         pickable: true,
         autoHighlight: true,
         getPosition: d => [d.longitude, d.latitude],
@@ -44,16 +49,16 @@ export class CitiesScatterplotLayer {
 
     return layers
   }
-  static getMapOptions() {
+  getMapOptions() {
     return {
-      center: {lat: 48.8566, lng: 2.3522},
-      zoom: 9
+      center: this.mapOptions.center,
+      zoom: this.mapOptions.zoom
     }
   }
-  static getMetadata() {
+  getMetadata() {
     return {
-      name: 'Cities',
-      thumbnail: require('../../assets/cities.png')
+      name: this.metaData.name,
+      thumbnail: this.metaData.img
     }
   }
 }
