@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="main.css" />
     <title>deck.gl w/ Google Maps example</title>
-  </head>
+</head>
 
-  <body>
+<body>
+    <div id="githubLink">
+        <a href="https://github.com/encetroc/covid-19-map" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
     <div id="attribution">
-      <span>Data taken from: </span>
-      <a href="https://www.trackcorona.live/api" target="_blank" >TrackCorona</a>
+        <span>Data taken from: </span>
+        <a href="https://www.trackcorona.live/api" target="_blank">TrackCorona</a>
     </div>
     <div id="tooltip">
-      <h3 id="location">Paris</h3>
-      <span>Last Update: </span> <h4 id="updated">update</h4>
-      <ul>
-        <li>Confirmed: <span id="confirmed">0</span></li>
-        <li>Recovered: <span id="recovered">0</span></li>
-        <li>Dead: <span id="dead">110</span></li>
-      </ul>
+        <h3 id="location">Paris</h3>
+        <span>Last Update: </span>
+        <h4 id="updated">update</h4>
+        <ul>
+            <li>Confirmed: <span id="confirmed">0</span></li>
+            <li>Recovered: <span id="recovered">0</span></li>
+            <li>Dead: <span id="dead">110</span></li>
+        </ul>
     </div>
     <div id="menu"></div>
     <div id="map"></div>
     <script src="index.js"></script>
-  </body>
+</body>
+
 </html>
